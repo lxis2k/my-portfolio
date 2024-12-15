@@ -80,7 +80,7 @@ h6 {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 3px;
     font-weight: 800;
-    margin-bottom: 60px;
+    margin-bottom: 100px;
     text-shadow: 0 0 10px rgba(217, 176, 255, 0.486), 0 0 20px rgba(217, 176, 255, 0.548), 0 0 30px rgba(217, 176, 255, 0.5);
     margin-top: 100px;
 
@@ -740,5 +740,6 @@ a {
 }
 
 
-
-
+.kontakt {
+margin-top: 550px;
+}
