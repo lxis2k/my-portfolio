@@ -75,6 +75,17 @@ h2 {
 
 }
 
+h6 {
+    font-size: 4rem;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 3px;
+    font-weight: 800;
+    margin-bottom: 60px;
+    text-shadow: 0 0 10px rgba(217, 176, 255, 0.486), 0 0 20px rgba(217, 176, 255, 0.548), 0 0 30px rgba(217, 176, 255, 0.5);
+    margin-top: 100px;
+
+
+}
 
 /*______________________*/
 /*       Button         */
@@ -196,8 +207,8 @@ a {
 
 /* Zusätzlicher Inhalt in der Portfolio-Seite */
 .portfolio {
-    margin-top: 50px;
-    padding: 20px;
+    margin-top: 10px;
+    padding: 10px;
     background-color: transparent;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
@@ -241,7 +252,7 @@ a {
 }
 
 .portfolio {
-    height: 180vh; /* 100% der Höhe des Viewports */
+    height: 160vh; /* 100% der Höhe des Viewports */
 }
 
 
@@ -314,6 +325,28 @@ a {
 .star.parallax-fast {
     width: 10px;
     height: 10px;
+}
+
+
+/* Sternschnuppen */
+.shooting-star {
+    position: absolute;
+    background-color: white;
+    width: 2px;
+    height: 2px;
+    opacity: 0.8;
+    animation: shoot 5s linear forwards;
+}
+
+@keyframes shoot {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) translateX(100vw);
+        opacity: 0;
+    }
 }
 
 
@@ -563,3 +596,149 @@ a {
     display: flex;
     flex-direction: column; /* Text in der Zeile untereinander anordnen */
 }
+
+
+
+/*______________________*/
+/*       infoCARD       */
+/*______________________*/
+
+
+
+/* From Uiverse.io by dylanharriscameron */ 
+
+.kontakt {
+    margin-top: 400px;
+    
+    }
+    
+.infocard {
+    position: fixed; /* Fixiert den Card-Container auf der Seite */
+    width: 600px;    /* Breite auf 400px setzen */
+    height: 290px;   /* Höhe auf 250px setzen */
+    border-radius: 14px;
+    z-index: 1111;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 20px 20px 60px #ff72e715, -20px -20px 60px #8400ff1c;
+    bottom: 0;       /* Fixiert den Card-Container am unteren Rand */
+    left: 50%;       /* Positioniert den Card-Container horizontal in der Mitte */
+    transform: translateX(-50%); /* Verschiebt den Card-Container um 50% seiner Breite nach links, damit er perfekt zentriert ist */
+    margin-top: 200px;
+    transform-style: preserve-3d;
+}
+
+.bg {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 590px;   /* Breite leicht reduziert, um Platz für den Rand zu lassen */
+    height: 280px;  /* Höhe leicht reduziert, um Platz für den Rand zu lassen */
+    z-index: 2;
+    background: rgb(24, 24, 24);
+    backdrop-filter: blur(24px);
+    border-radius: 10px;
+    overflow: hidden;
+    outline: 2px solid rgb(0, 0, 0);
+}
+
+.blob {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 490px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: #ff86eb;
+    opacity: 1;
+    filter: blur(12px);
+    animation: blob-bounce 5s infinite ease;
+}
+
+@keyframes blob-bounce {
+    0% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+    }
+
+    50% {
+        transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+    }
+
+    75% {
+        transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+    }
+
+    100% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+}
+
+.kontakttext {
+    z-index: 3; /* Stellt sicher, dass der Text über dem Blob und der Hintergrund ist */
+    padding: 10px;
+}
+
+.kontakttext p7 {
+    margin-top: 10px;
+    font-size: 4rem;
+    color: #f2f2f2;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Hover-Effekt */
+.kontakttext .p7:hover {
+    color: #fd9bedc5; /* Farbe ändern, wenn der Benutzer mit der Maus drüber fährt */
+}
+
+
+
+
+#copyButton {
+    background-color: #292929;
+    color: white;
+    border: none;
+    padding: 7px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#copyButton:hover {
+    background-color: #3f3f3f;
+}
+
+#textToCopy {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+#copyButton2 {
+    background-color: #292929;
+    color: white;
+    border: none;
+    padding: 7px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#copyButton2:hover {
+    background-color: #3f3f3f;
+}
+
+#textToCopy2 {
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+
+
+

@@ -28,8 +28,8 @@ document.getElementById('scrollButton').addEventListener('click', function () {
     // Sanft an den Anfang der zweiten Seite scrollen
     const targetPosition = portfolio.offsetTop; // Die obere Position der zweiten Seite
     window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
+        behavior: 'smooth',
+        block: "start"
     });
 });
 
@@ -84,6 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Zufällige Positionen für die Sterne
             star.style.top = Math.random() * 100 + 'vh';
             star.style.left = Math.random() * 100 + 'vw';
+
+            
             
             // Zufällige Größen
             const size = Math.random() * 2 + 1;
@@ -95,6 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
             star.classList.add(speedClass);
 
             starsContainer.appendChild(star);
+
+        
         }
     }
 
@@ -103,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollPosition = window.scrollY;
         const stars = document.querySelectorAll('.star');
         
+        
         stars.forEach(star => {
             // Berechnung der neuen Position auf Basis der Scroll-Position
             const speed = star.classList.contains('parallax-slow') ? 0.3 : (star.classList.contains('parallax-medium') ? 0.5 : 1);
@@ -110,7 +115,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Position des Sterns anpassen
             star.style.transform = `translateY(${offset}px)`;
+
+            
         });
+    }
+
+    // Funktion für Sternschnuppen
+    function createShootingStar() {
+        const shootingStar = document.createElement('div');
+        shootingStar.classList.add('shooting-star');
+        
+        // Zufällige Startposition
+        shootingStar.style.left = Math.random() * 100 + 'vw';
+        shootingStar.style.top = -10 + 'px'; // Startet knapp über dem Bildschirm
+
+        // Zufällige Geschwindigkeit der Sternschnuppe
+        const speed = Math.random() * 3 + 2; // Zwischen 2s und 5s für die Bewegung
+        shootingStar.style.animationDuration = `${speed}s`;
+
+        starsContainer.appendChild(shootingStar);
+
+        // Entfernt die Sternschnuppe, nachdem die Animation abgeschlossen ist
+        setTimeout(() => {
+            shootingStar.remove();
+        }, speed * 1000); // Umrechnung in Millisekunden
     }
 
     // Sterne generieren
@@ -121,7 +149,53 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initiale Position der Sterne beim Laden der Seite einstellen
     moveStarsOnScroll();
+
+    // Alle 5-10 Sekunden eine neue Sternschnuppe erstellen
+    setInterval(createShootingStar, Math.random() * 5000 + 5000); // Zufälliges Intervall zwischen 5 und 10 Sekunden
 });
 
 
+
+
+
+
+
+window.addEventListener('scroll', function() {
+    const visualcard = document.querySelector('.infocard');
+
+    // Überprüfen, ob der Benutzer das Ende der Seite erreicht hat
+    const bottomOfPage = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight;
+
+    // Wenn das Ende erreicht wird, die Karte sichtbar machen
+    if (bottomOfPage) {
+        visualcard.style.opacity = 1;  // Karte sichtbar machen
+        visualcard.style.pointerEvents = 'auto';  // Interaktionen aktivieren
+    }
+});
+
+
+
+document.getElementById('copyButton').addEventListener('click', function() {
+    // Den Text des Elements abrufen
+    const textToCopy = document.getElementById('textToCopy').textContent;
+
+    // Text in die Zwischenablage kopieren
+    navigator.clipboard.writeText(textToCopy).then(function() {
+        console.log('Text wurde in die Zwischenablage kopiert!');
+    }).catch(function(error) {
+        console.error('Fehler beim Kopieren in die Zwischenablage: ', error);
+    });
+});
+
+document.getElementById('copyButton2').addEventListener('click', function() {
+    // Den Text des Elements abrufen
+    const textToCopy2 = document.getElementById('textToCopy2').textContent;
+
+    // Text in die Zwischenablage kopieren
+    navigator.clipboard.writeText(textToCopy2).then(function() {
+        console.log('Text wurde in die Zwischenablage kopiert!');
+    }).catch(function(error) {
+        console.error('Fehler beim Kopieren in die Zwischenablage: ', error);
+    });
+});
 
