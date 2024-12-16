@@ -75,18 +75,23 @@ document.addEventListener('wheel', function (e) {
 document.addEventListener('DOMContentLoaded', () => {
     const starsContainer = document.querySelector('.stars-container');
 
+    // Maximalanzahl der Sterne
+    const maxStars = 130;
+    let currentStars = 0;
+
     // Funktion zum Erzeugen der Sterne
-    function generateStars() {
-        for (let i = 0; i < 100; i++) {
+    function generateStars(amount = 90) {
+        for (let i = 0; i < amount; i++) {
+            if (currentStars >= maxStars) return; // Verhindert, dass mehr Sterne als maxStars hinzugefügt werden
+
             const star = document.createElement('div');
             star.classList.add('star');
             
-            // Zufällige Positionen für die Sterne
-            star.style.top = Math.random() * 100 + 'vh';
+            // Zufällige Positionen für die Sterne (oberhalb und innerhalb des sichtbaren Bereichs)
+            const topPosition = (Math.random() * 110) - 15 + 'vh'; // Sterne können oberhalb des Bildschirms erscheinen
+            star.style.top = topPosition;
             star.style.left = Math.random() * 100 + 'vw';
 
-            
-            
             // Zufällige Größen
             const size = Math.random() * 2 + 1;
             star.style.width = `${size}px`;
@@ -97,8 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
             star.classList.add(speedClass);
 
             starsContainer.appendChild(star);
-
-        
+            currentStars++;
         }
     }
 
@@ -107,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollPosition = window.scrollY;
         const stars = document.querySelectorAll('.star');
         
-        
         stars.forEach(star => {
             // Berechnung der neuen Position auf Basis der Scroll-Position
             const speed = star.classList.contains('parallax-slow') ? 0.3 : (star.classList.contains('parallax-medium') ? 0.5 : 1);
@@ -115,9 +118,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Position des Sterns anpassen
             star.style.transform = `translateY(${offset}px)`;
-
-            
         });
+
+        // Neue Sterne hinzufügen, sowohl oben als auch unten
+        if (scrollPosition + window.innerHeight >= document.body.scrollHeight - 30) {
+            generateStars(10); // Sterne unten hinzufügen
+        }
+
+        if (scrollPosition <= 10) {
+            generateStars(30); // Sterne oben hinzufügen, wenn am Anfang der Seite
+        }
     }
 
     // Funktion für Sternschnuppen
@@ -141,18 +151,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }, speed * 1000); // Umrechnung in Millisekunden
     }
 
-    // Sterne generieren
-    generateStars();
+    // Funktion, um den Scroll-Event für mobile Geräte zu optimieren
+    function handleScroll() {
+        // Alle 10ms wird geprüft, ob neue Sterne benötigt werden
+        setTimeout(() => {
+            moveStarsOnScroll();
+        }, 10);
+    }
+
+    // Sterne generieren (erstmalig)
+    generateStars(50); // Zuerst 50 Sterne generieren
 
     // Scroll-Event hinzufügen
     window.addEventListener('scroll', moveStarsOnScroll);
-    
+
+    // Event-Listener für Scrollen und Touchen hinzufügen
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('touchmove', handleScroll, { passive: true }); // Für mobile Geräte
+
     // Initiale Position der Sterne beim Laden der Seite einstellen
     moveStarsOnScroll();
 
     // Alle 5-10 Sekunden eine neue Sternschnuppe erstellen
     setInterval(createShootingStar, Math.random() * 5000 + 5000); // Zufälliges Intervall zwischen 5 und 10 Sekunden
 });
+
+
 
 
 
@@ -204,8 +228,11 @@ document.getElementById('copyButton2').addEventListener('click', function() {
     document.getElementById("scrollbutton").addEventListener("click", function() {
         document.getElementById("Portfolio").scrollIntoView({ 
             behavior: "smooth", 
-            block: "Top" 
+            block: "start" 
         });
     });
+
+
+
 
 
