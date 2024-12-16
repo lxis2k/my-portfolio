@@ -199,3 +199,13 @@ document.getElementById('copyButton2').addEventListener('click', function() {
     });
 });
 
+
+
+    document.getElementById("scrollbutton").addEventListener("click", function() {
+        document.getElementById("Portfolio").scrollIntoView({ 
+            behavior: "smooth", 
+            block: "Top" 
+        });
+    });
+
+

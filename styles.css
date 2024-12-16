@@ -435,6 +435,7 @@ a {
     justify-content: center;
     margin-top: 20px;
 }
+
 /* Card 1: Individueller Hover-Effekt */
 .card:hover {
     box-shadow: 0px 0px 30px 5px rgba(68, 6, 109, 0.747); /* Grüner Glow */
@@ -515,7 +516,7 @@ a {
     width: 30%; /* Passt das Bild an die Breite des Containers an */
     max-width: 25px; /* Maximale Breite des Bildes */
     height: auto; /* Beibehaltung des Seitenverhältnisses */
-    border-radius: 2px; /* Abgerundete Ecken */
+    border-radius: 1px; /* Abgerundete Ecken */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Schattierung für ein modernes Aussehen */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation bei Hover */
 }
@@ -531,7 +532,6 @@ a {
 /*       cards2.0       */
 /*______________________*/
 
-/* From Uiverse.io by codebykay101 */ 
 .fähigkeiten {
     position: relative;
     display: flex;
@@ -584,10 +584,10 @@ a {
     margin-right: 10px;
 }
 .fähigkeiten p4 {
-    font-size: 0.8rem; /* Schriftgröße für den Text */
+    font-size: 0.65rem; /* Schriftgröße für den Text */
     color: #818181; /* Textfarbe */
     display: block; /* Stellt sicher, dass die Elemente untereinander angezeigt werden */
-    margin-bottom: 0.8rem; /* Optional: Abstand zwischen den Absätzen */
+    margin-bottom: 0.7rem; /* Optional: Abstand zwischen den Absätzen */
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -603,31 +603,28 @@ a {
 /*       infoCARD       */
 /*______________________*/
 
+.kontaktt {
+    padding-bottom: 20px;
+    padding-top: 50px;
+    text-align: center; /* Zentriert die Überschrift */
+}
 
+.info {
+    padding-top: 20px;
+}
 
-/* From Uiverse.io by dylanharriscameron */ 
-
-.kontakt {
-    margin-top: 400px;
-    
-    }
-    
 .infocard {
-    position: fixed; /* Fixiert den Card-Container auf der Seite */
-    width: 600px;    /* Breite auf 400px setzen */
-    height: 290px;   /* Höhe auf 250px setzen */
+    position: relative; /* Nicht fixieren, sondern relativ platzieren */
+    width: 600px;
+    height: 290px;
     border-radius: 14px;
-    z-index: 1111;
+    margin: 0 auto; /* Zentriert horizontal */
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 20px 20px 60px #ff72e715, -20px -20px 60px #8400ff1c;
-    bottom: 0;       /* Fixiert den Card-Container am unteren Rand */
-    left: 50%;       /* Positioniert den Card-Container horizontal in der Mitte */
-    transform: translateX(-50%); /* Verschiebt den Card-Container um 50% seiner Breite nach links, damit er perfekt zentriert ist */
-    margin-top: 200px;
     transform-style: preserve-3d;
 }
 
@@ -635,8 +632,8 @@ a {
     position: absolute;
     top: 5px;
     left: 5px;
-    width: 590px;   /* Breite leicht reduziert, um Platz für den Rand zu lassen */
-    height: 280px;  /* Höhe leicht reduziert, um Platz für den Rand zu lassen */
+    width: 590px;
+    height: 280px;
     z-index: 2;
     background: rgb(24, 24, 24);
     backdrop-filter: blur(24px);
@@ -682,21 +679,22 @@ a {
 }
 
 .kontakttext {
-    z-index: 3; /* Stellt sicher, dass der Text über dem Blob und der Hintergrund ist */
+    z-index: 3;
     padding: 10px;
+    text-align: center;
 }
 
-.kontakttext p7 {
+.p7 {
     margin-top: 10px;
-    font-size: 4rem;
+    font-size: 1.2rem;
     color: #f2f2f2;
     transition: all 0.5s ease-in-out;
 }
 
-/* Hover-Effekt */
-.kontakttext .p7:hover {
-    color: #fd9bedc5; /* Farbe ändern, wenn der Benutzer mit der Maus drüber fährt */
+.p7:hover {
+    color: #fd9bedc5;
 }
+
 
 
 
@@ -739,7 +737,120 @@ a {
     margin-top: 3px;
 }
 
+/*---------------*/
+/*    handy      */
+/*               */
+/*---------------*/
 
-.kontakt {
-margin-top: 550px;
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2rem;         /* Kleinere Schriftgrößen */
+    }
+
+    h6 {
+        font-size: 2rem;         /* Kleinere Schriftgrößen */
+        padding-bottom: 10px;
+    }
+
+
+    h2 {
+        font-size: 1.4rem;         /* Kleinere Schriftgrößen */
+    }
+
+    button {
+        font-size: 12px;
+        padding: 0.8em 1.5em;
+    }
+
+    .hero {
+        transform: translateY(200px);
+    }
+
+    .card, .card2, .card3 {
+        width: 75%; /* Karten passen sich an kleinere Bildschirme an */
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .portfolio {
+
+        height: 400vh;
+    }
+
+    .card-image:hover {
+        transform: scale(1.6); /* Bild wird um 300% vergrößert */
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3); /* Intensivere Schattierung */
+    }
+
+    .card-image2:hover {
+        transform: scale(2.2); /* Bild wird um 300% vergrößert */
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3); /* Intensivere Schattierung */
+    }
+
+    .card-image3:hover {
+        transform: scale(12); /* Bild wird um 300% vergrößert */
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3); /* Intensivere Schattierung */
+    }
+
+
+    @media screen and (max-width: 768px) {
+        .fähigkeiten {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 20px; /* Abstand zu den Rändern */
+            text-align: center; /* Zentrierung des Inhalts */
+        }
+    
+        .fähigkeiten h2 {
+            font-size: 2.5rem; /* Kleinere Überschrift */
+            margin-bottom: 15px;
+        }
+    
+        .fähigkeiten p4 {
+            font-size: 0.7rem; /* Kleinere Schrift für Text */
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .infocard {
+            display: flex;
+            flex-direction: column; /* Untereinander anordnen */
+            align-items: center;
+            justify-content: center;
+            width: 80%; /* Maximale Breite */
+            height: 80%;
+            margin: 15px auto; /* Zentrierung der Infocard */
+            padding: 17px; /* Abstand innen */
+            background-color: rgba(255, 255, 255, 0.1); /* Transparenter Hintergrund */
+            border-radius: 10px; /* Abgerundete Ecken */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Schatten */
+            text-align: center; /* Inhalt zentrieren */
+        }
+
+    
+    
+        .infocard h3 {
+            font-size: 1.8rem; /* Kleinere Überschrift */
+            margin-bottom: 10px;
+        }
+    
+        .infocard p {
+            font-size: 1rem; /* Kleinere Schrift */
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+    
+
+    /* Handy-Optimierung für Button */
+@media screen and (max-width: 768px) {
+    #zumLebenslauf {
+        font-size: 0.9rem; /* Kleinere Schriftgröße */
+        padding: 0.8em 2em; /* Kleinere Innenabstände */
+        border-radius: 8px; /* Abgerundete Ecken */
+    }
+}
+
+
 }
