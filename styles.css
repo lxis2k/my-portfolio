@@ -1,3 +1,17 @@
+
+/*_________________________________*/
+/*                                 */
+/*       Lebenslauf website        */
+/*          by. Luis P.P.          */
+/*_________________________________*/
+
+
+/*______________________*/
+/*        1. Seite      */
+/*______________________*/
+
+
+
 /* Allgemeine Stile */
 * {
     margin: 0;
@@ -146,7 +160,7 @@ button:active {
 }
 
 .hero.animate button {
-    animation: fadeOutButton 2s ease-in-out; /* Fade-out Effekt für den Button */
+    animation: fadeOutButton 4s ease-in-out; /* Fade-out Effekt für den Button */
 }
 
 /* Animation für den Button beim Weggehen */
@@ -154,6 +168,7 @@ button:active {
     0% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
         pointer-events: none; /* Verhindert Interaktionen */
@@ -161,12 +176,13 @@ button:active {
 }
 
 
+
+
+
+
 /*______________________*/
 /*       2.SEITE        */
 /*______________________*/
-
-
-
 
 /* Zweite Seite */
 .portfolio {
@@ -252,8 +268,10 @@ a {
 }
 
 .portfolio {
-    height: 160vh; /* 100% der Höhe des Viewports */
+    height: 170vh; /* 170% der Höhe des Viewports */
 }
+
+
 
 
 
@@ -262,7 +280,9 @@ a {
 /*       STERNE         */
 /*______________________*/
 
-/* Container für die Sterne */
+
+
+/* stars container */
 .stars-container {
     position: fixed;
     top: 0;
@@ -848,16 +868,5 @@ a {
             line-height: 1.4;
             margin-bottom: 10px;
         }
-    
-
-    /* Handy-Optimierung für Button */
-@media screen and (max-width: 768px) {
-    #zumLebenslauf {
-        font-size: 0.9rem; /* Kleinere Schriftgröße */
-        padding: 0.8em 2em; /* Kleinere Innenabstände */
-        border-radius: 8px; /* Abgerundete Ecken */
-    }
- }
-
 }
 

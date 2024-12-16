@@ -1,3 +1,11 @@
+
+    //-----------------------------//
+   //                             //
+  //         Animation           //
+ //                             //
+//-----------------------------//
+
+
 document.addEventListener('wheel', function (e) {
     const hero = document.querySelector('.hero');
     const portfolio = document.querySelector('.portfolio');
@@ -160,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Sterne generieren (erstmalig)
-    generateStars(50); // Zuerst 50 Sterne generieren
+    generateStars(70); // Zuerst 50 Sterne generieren
 
     // Scroll-Event hinzufügen
     window.addEventListener('scroll', moveStarsOnScroll);
@@ -182,6 +190,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+    //-----------------------------//
+   //                             //
+  //         card                //
+ //                             //
+//-----------------------------//
+
 
 
 window.addEventListener('scroll', function() {
@@ -197,6 +211,12 @@ window.addEventListener('scroll', function() {
     }
 });
 
+
+    //-----------------------------//
+   //                             //
+  //         Copybutton          //
+ //                             //
+//-----------------------------//
 
 
 document.getElementById('copyButton').addEventListener('click', function() {
@@ -225,14 +245,8 @@ document.getElementById('copyButton2').addEventListener('click', function() {
 
 
 
-    document.getElementById("scrollbutton").addEventListener("click", function() {
-        document.getElementById("Portfolio").scrollIntoView({ 
-            behavior: "smooth", 
-            block: "start" 
-        });
-    });
 
 
 
 
-
+    
