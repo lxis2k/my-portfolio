@@ -424,7 +424,7 @@ a {
     padding: 5px 10px;
 }
 .card3 p {
-    font-size: 0.9rem; /* Schriftgröße für den Text */
+    font-size: 0.7rem; /* Schriftgröße für den Text */
     color: #fff; /* Textfarbe */
     font-weight: normal; 
     justify-content: center;
@@ -434,7 +434,7 @@ a {
     text-align: center; /* Text horizontal zentrieren */
 }
 .card3 p2  {
-    font-size: 0.8rem; /* Schriftgröße für den Text */
+    font-size: 0.5rem; /* Schriftgröße für den Text */
     color: #fff; /* Textfarbe */
     font-weight: normal; 
     justify-content: center;
@@ -869,4 +869,5 @@ a {
             margin-bottom: 10px;
         }
 }
+
 
